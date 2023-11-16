@@ -60,6 +60,6 @@ public class BookDaoImpl implements BookDao {
 	
 	@Override
 	public List < Books > find ( ) {
-		return jdbcTemplate.query ( "SelECT isbn, title, author_id FROM books ",new BookRowMapper () );
+		return jdbcTemplate.query ( "SELECT isbn, title, author_id FROM books",new BookRowMapper () );
 	}
 }

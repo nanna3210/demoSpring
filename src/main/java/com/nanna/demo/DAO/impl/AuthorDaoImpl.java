@@ -31,7 +31,7 @@ private final JdbcTemplate jdbcTemplate;
 	
 	@Override
 	public List < Author > find ( ) {
-		return  jdbcTemplate.query ( "select id ,name, age from authors" ,new AuthorRowMapper () );
+		return  jdbcTemplate.query ( "SELECT id, name, age FROM authors" ,new AuthorRowMapper () );
 	}
 	
 	public Optional<Author> findOne ( long authorId ) {

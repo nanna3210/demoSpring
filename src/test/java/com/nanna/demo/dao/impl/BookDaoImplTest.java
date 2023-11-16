@@ -1,5 +1,6 @@
 package com.nanna.demo.dao.impl;
 
+import com.nanna.demo.DAO.impl.AuthorDaoImpl;
 import com.nanna.demo.DAO.impl.BookDaoImpl;
 import com.nanna.demo.domain.Books;
 import org.junit.jupiter.api.Test;
@@ -48,7 +49,9 @@ class BookDaoImplTest {
 	@Test
 	public void testThatFindAllBookGeneratesCorrectSql() {
 		underTest.find ();
-		verify ( jdbcTemplate ).query ( "SELECT isbn, title, author_id FROM books" ,ArgumentMatchers.< BookDaoImpl.BookRowMapper >any());
+		verify ( jdbcTemplate ).query (eq ( "SELECT isbn, title, author_id FROM books" )
+				,ArgumentMatchers.< BookDaoImpl.BookRowMapper >any());
+//				,any( AuthorDaoImpl.AuthorRowMapper.class));
 		
 	}
 	
