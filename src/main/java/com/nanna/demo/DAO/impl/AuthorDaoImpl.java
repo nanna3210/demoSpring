@@ -29,6 +29,11 @@ private final JdbcTemplate jdbcTemplate;
 	
 	}
 	
+	@Override
+	public List < Author > find ( ) {
+		return  jdbcTemplate.query ( "select id ,name, age from authors" ,new AuthorRowMapper () );
+	}
+	
 	public Optional<Author> findOne ( long authorId ) {
 		List < Author > results  = jdbcTemplate.query ( "SELECT id, name, age FROM authors WHERE id = ? LIMIT 1" ,
 				new AuthorRowMapper () , authorId  );

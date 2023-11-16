@@ -24,7 +24,7 @@ class AuthorDaoImplTest {
 	@Test
 	public void testThatCreateAuthorGeneratesCorrectSql (){
 //		verify( jdbcTemplate ).update ( "INSERT INTO authors (id, name, age) VALUES (1, 'Abigail rose', 40)" );
-		Author abigailRose = TestDataUtil.createTestAuthor ();
+		Author abigailRose = TestDataUtil.createTestAuthorA ();
 		underTest.create ( abigailRose );
 		verify ( jdbcTemplate ).update ( eq ( "INSERT INTO authors (id, name, age) VALUES (?, ?, ?)" ) , eq ( 1L ) ,
 				eq ( "Abigail rose" ) , eq ( 40 ) );
@@ -42,7 +42,12 @@ class AuthorDaoImplTest {
 	
 	@Test
 	public void testThatfindManygenerateCorrectSql() {
-	
+// The code snippet verifies that a specific query is executed on a jdbcTemplate object, with specific parameters and a specific row mapper.
+		underTest.find ();
+		verify ( jdbcTemplate ).query (
+				eq ( "SELECT id, name, age FROM authors WHERE id = ? LIMIT 1"  ) ,
+				eq ( ArgumentMatchers.<AuthorDaoImpl.AuthorRowMapper>any ())
+		);
 	}
 	
 	

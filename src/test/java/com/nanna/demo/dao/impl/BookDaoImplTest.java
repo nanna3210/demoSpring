@@ -28,7 +28,7 @@ class BookDaoImplTest {
 	
 	@Test
 	public void testThatCreateBookGeneratesCorrectSql (){
-		Books theGreatGatsby = TestDataUtil.createTestBook ();
+		Books theGreatGatsby = TestDataUtil.createTestBookA ();
 		underTest.create ( theGreatGatsby );
 		verify ( jdbcTemplate ).update (
 				eq ( "INSERT INTO books (isbn, title, author_id) VALUES (?, ?, ?)" ) ,
@@ -45,7 +45,12 @@ class BookDaoImplTest {
 				eq ( "iq-234-dail-4765" )
 		);
 	}
-	
+	@Test
+	public void testThatFindAllBookGeneratesCorrectSql() {
+		underTest.find ();
+		verify ( jdbcTemplate ).query ( "SELECT isbn, title, author_id FROM books" ,ArgumentMatchers.< BookDaoImpl.BookRowMapper >any());
+		
+	}
 	
 	
 	

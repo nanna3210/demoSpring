@@ -1,7 +1,7 @@
 package com.nanna.demo.DAO.impl;
 
 import com.nanna.demo.DAO.BookDao;
-import com.nanna.demo.domain.Author;
+//import com.nanna.demo.domain.Author;
 import com.nanna.demo.domain.Books;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -16,6 +16,9 @@ import java.util.Optional;
 public class BookDaoImpl implements BookDao {
 
 	private final JdbcTemplate jdbcTemplate;
+	
+	private static final String CREATE_BOOK = "INSERT INTO books (isbn, title, author_id) VALUES (?, ?, ?)";
+	
 	
 	public BookDaoImpl (final  JdbcTemplate jdbcTemplate ) {
 		this.jdbcTemplate = jdbcTemplate;
@@ -53,5 +56,10 @@ public class BookDaoImpl implements BookDao {
 		List < Books > results = jdbcTemplate.query ( "SELECT isbn, title, author_id FROM books WHERE isbn = ? LIMIT 1" , new BookRowMapper () , isbn );
 		Optional < Books > first = results.stream ().findFirst ();
 		return first;
+	}
+	
+	@Override
+	public List < Books > find ( ) {
+		return jdbcTemplate.query ( "SelECT isbn, title, author_id FROM books ",new BookRowMapper () );
 	}
 }

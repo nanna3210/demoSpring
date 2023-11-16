@@ -28,7 +28,9 @@ public class DemoApplication  implements CommandLineRunner {
 	public void run ( String... args ) throws Exception {
 		JdbcTemplate restTemplate = new JdbcTemplate ( dataSource );
 		restTemplate.execute ( "select 1" );
+		log.info ( "app is started" );
 		log.info ( "data source is : " + dataSource.toString () );
+		log.info ( "app is running " );
 		
 		
 	

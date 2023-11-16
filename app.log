@@ -1,0 +1,15 @@
+2023-11-13 05:03:32.107  INFO 12276 --- [main] com.nanna.demo.DemoApplication           : Starting DemoApplication using Java 17.0.5 on LAPTOP-TU3FHUDN with PID 12276 (C:\Users\Sai\Desktop\WORK\N\spring practice\28mins\demo\target\classes started by Sai in C:\Users\Sai\Desktop\WORK\N\spring practice\28mins\demo)
+2023-11-13 05:03:32.112  INFO 12276 --- [main] com.nanna.demo.DemoApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-11-13 05:03:34.312  INFO 12276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-11-13 05:03:34.327  INFO 12276 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-13 05:03:34.328  INFO 12276 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+2023-11-13 05:03:34.501  INFO 12276 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-13 05:03:34.501  INFO 12276 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2293 ms
+2023-11-13 05:03:34.958  INFO 12276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-13 05:03:35.357  INFO 12276 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-13 05:03:36.302  INFO 12276 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-13 05:03:36.391  INFO 12276 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-11-13 05:03:36.413  INFO 12276 --- [main] com.nanna.demo.DemoApplication           : Started DemoApplication in 5.302 seconds (JVM running for 6.114)
+2023-11-13 05:03:36.529  INFO 12276 --- [main] com.nanna.demo.DemoApplication           : app is started
+2023-11-13 05:03:36.530  INFO 12276 --- [main] com.nanna.demo.DemoApplication           : data source is : HikariDataSource (HikariPool-1)
+2023-11-13 05:03:36.531  INFO 12276 --- [main] com.nanna.demo.DemoApplication           : app is running 
